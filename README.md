@@ -13,7 +13,7 @@ Licensed under the Apache License 2.0 (see `LICENSE`). Competition data is not i
 | `kaggle_refresh/` | Builds the CPU Kaggle notebook that runs the refresh-versus-rebuild check on the competition snapshots. | 5 |
 | `kaggle_probe/` | Builds the GPU Kaggle notebook for the reading test (official `swegemma` check, then four Gemma 4 sizes with and without the note). `tally.py` and `paired.py` summarise the answers. | 2, 4 |
 | `kaggle_agent/` | Builds the GPU Kaggle notebook for full agent sessions, following the host's getting-started notebook. It wraps the three graph tools to log every call and, in the "note" condition, adds the version fields. `compare_runs.py` summarises runs. | 4.1 |
-| `paper/figures/` | `make_figures.py` redraws Figures 1 to 3 from the data files. | Figures |
+| `paper/figures/` | `make_figures.py` redraws Figures 1, 2 and 5; `make_fig_upset.py` draws Figure 3 and `make_fig_dumbbell.py` Figure 4. | Figures |
 
 ## Notes
 
@@ -23,4 +23,4 @@ Licensed under the Apache License 2.0 (see `LICENSE`). Competition data is not i
 
 ## Paper 2: "How Gemma 4 agents use their tools"
 
-`paper2/analyse.py` reads the four agent runs' session records (the `results_*` folders the `kaggle_agent` notebooks write) and prints every number in the second paper; it also writes the derived call table released as a Kaggle dataset. `paper2/check_escape.py` compares failed edits with the files at each task's starting commit (needs the public repositories and the competition `tasks.jsonl`). `paper2/make_figures.py` draws its two figures.
+`paper2/analyse.py` reads the four agent runs' session records (the `results_*` folders the `kaggle_agent` notebooks write) and prints every number in the second paper; it also writes the derived call table released as a Kaggle dataset. `paper2/check_escape.py` compares failed edits with the files at each task's starting commit (needs the public repositories and the competition `tasks.jsonl`). `paper2/make_fig_sessions.py` draws Figure 1 and `paper2/make_figures.py` Figures 2 and 3.

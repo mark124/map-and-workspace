@@ -55,10 +55,10 @@ def stacked(ax, data, cats, title, xlabel, pct=True):
     ax.legend([h[i] for i in o], [l[i] for i in o], loc='upper center', bbox_to_anchor=(0.45, -0.22), ncol=3, frameon=False, fontsize=8.5)
 
 fig, ax = plt.subplots(figsize=(8.2, 3.6), facecolor=SURF)
-stacked(ax, mix, GROUPS, 'Figure 1. Share of all tool calls by tool (main agent + sub-agent)', 'percent of tool calls in the run')
+stacked(ax, mix, GROUPS, 'Figure 2. Share of all tool calls by tool (main agent + sub-agent)', 'percent of tool calls in the run')
 fig.tight_layout(); fig.savefig(FIG / 'fig1_tool_mix.png', dpi=200); fig.savefig(FIG / 'fig1_tool_mix.svg')
 
 fig, ax = plt.subplots(figsize=(8.2, 3.3), facecolor=SURF)
-stacked(ax, edits, EDIT, 'Figure 2. What happened to each edit_file call', 'percent of edit_file calls in the run')
+stacked(ax, edits, EDIT, 'Figure 3. What happened to each edit_file call', 'percent of edit_file calls in the run')
 fig.tight_layout(); fig.savefig(FIG / 'fig2_edit_outcomes.png', dpi=200); fig.savefig(FIG / 'fig2_edit_outcomes.svg')
 print('figures written', {r: dict(edits[r]) for r in RUNS})
