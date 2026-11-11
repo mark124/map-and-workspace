@@ -20,3 +20,7 @@ Licensed under the Apache License 2.0 (see `LICENSE`). Competition data is not i
 - `stale/toolsim.py` calls the official `swegemma` 0.2.11 functions (`resolve_node_name`, `get_neighbor`, `get_similar_nodes`); install `swegemma` from the competition's wheelhouse dataset. For the paper we used our own reproduction of these functions, which is not included here; `kaggle_release_check/` runs `stale/replay2.py` with this official-code version on Kaggle and compares it with our results.
 - `graphrefresh` uses its own simple extractor (one node per function or class; a call to `foo()` links to every function named `foo`). It is not the competition's graph builder.
 - Kaggle notebooks are written for 4 x L4 GPUs and the official `gemma-4-*-it-qat-w4a16-ct` checkpoints.
+
+## Paper 2: "How Gemma 4 agents use their tools"
+
+`paper2/analyse.py` reads the four agent runs' session records (the `results_*` folders the `kaggle_agent` notebooks write) and prints every number in the second paper; it also writes the derived call table released as a Kaggle dataset. `paper2/check_escape.py` compares failed edits with the files at each task's starting commit (needs the public repositories and the competition `tasks.jsonl`). `paper2/make_figures.py` draws its two figures.
